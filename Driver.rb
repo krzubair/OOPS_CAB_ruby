@@ -1,9 +1,9 @@
 
 require './person.rb'
 class Driver < Person
-    attr_accessor :driver_id, :driver_name, :driver_address, :driver_gender,  :driver_phone_no,:driver_age, :driver_dl_no
+    attr_accessor :driver_id, :driver_name, :driver_address, :driver_gender,  :driver_phone_no,:driver_age, :driver_dl_number
     
-    def initialize(driver_id, driver_name, driver_address, driver_gender,driver_phone_no, driver_age,  driver_dl_number)
+    def initialize(driver_id, driver_name, driver_address, driver_gender,driver_phone_no, driver_age,  driver_dl_no)
      
       super(driver_id, driver_name, driver_address, driver_gender, driver_phone_no)
       @driver_age = driver_age
@@ -19,11 +19,11 @@ class Driver < Person
       super
       puts "driver age: #{@driver_age}"
       # puts "driver phone_no: #{@driver_phone_no}"
-      puts "driver dl_no: #{@driver_dl_no}"
+      puts "driver dl_no: #{@driver_dl_number}"
       
-      
+      puts "---------------------------------------------------"
      
-      puts "-------------------------------------------------------------"
+      
     end
     
   end

@@ -2,7 +2,7 @@ require './person.rb'
 class User  < Person
     attr_accessor :user_id, :name, :address, :phone_no, :gender
     
-    def initialize(user_id, name, address, phone_number, gender)
+    def initialize(user_id, name, address, phone_no, gender)
       super
     end
   

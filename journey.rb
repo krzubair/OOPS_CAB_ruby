@@ -3,7 +3,7 @@ require './Taxi'
 require './Bill'
 
 
-class Journey
+class Journey 
     attr_accessor :journey_id, :journey_date, :start_time, :end_time, :start_loc, :end_loc, :advance_amt, :no_of_passngr, :driver_id, :taxi_id
     
     def initialize(journey_id, journey_date, start_time, end_time, start_loc, end_loc, advance_amt, no_of_passngr,driver_id,taxi_id)

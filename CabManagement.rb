@@ -38,7 +38,7 @@ class CabManagement
         address = gets.chomp!
 
         puts "enter Phone_no"
-        phone = gets.chomp!
+        phone = gets.chomp.to_i
 
         puts "enter gender "
         gender = gets.chomp!
@@ -129,12 +129,13 @@ class CabManagement
         age = gets.chomp.to_i
 
         puts "enter dl_num"
-        dl_num = gets.chomp
+        dl_num = gets.chomp.to_i
 
         driver_obj = Driver.new(id, name, address, gender, phone_no, age, dl_num)
 
         @drivers << driver_obj
 
+        # p @drivers
 
     end
 
@@ -163,7 +164,9 @@ class CabManagement
         puts "enter the advnce amt"
         advance_amt = gets.chomp.to_i
 
-        journey_obj = Journey.new(id, date, start_time, end_time, start_loc, end_loc, advance_amt, no_of_passngr,@drivers[(@drivers.size)-1].driver_id,@taxis[(@taxis.size)-1].reg_no)
+        
+
+        journey_obj = Journey.new(id, date, start_time, end_time, start_loc, end_loc, advance_amt, no_of_passngr,@drivers[(@drivers.size)-1].user_id,@taxis[(@taxis.size)-1].reg_no)
         @journeys << journey_obj
 
 
@@ -258,6 +261,15 @@ class CabManagement
         end  
     end 
 
+    def driver_display
+
+        puts "-----driver details are-----------------"
+        @drivers.each do |itr|
+            itr.display
+            
+        end    
+    end 
+
     def journey_display
 
         puts "-----journey details are-----------------"
@@ -271,16 +283,11 @@ class CabManagement
         puts "-----feedback details are-----------------"
         @feedback.each do |itr|
             itr.display
+            puts "------------------------------------------" 
         end    
     end 
 
-    def driver_display
-
-        puts "-----driver details are-----------------"
-        @drivers.each do |itr|
-            itr.display
-        end    
-    end 
+    
 
     def bill_display
 
